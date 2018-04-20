@@ -6,11 +6,17 @@ application.Home = Backbone.View.extend({
     className: 'home',
 
     initialize: function () {
-        this.render()
+        ViewHelper.getTemplate('../templates/home.hbs', this, { name: 'World' }) 
     },
 
     render: function () {
+        this.$el.html( this._template )
+    },
 
-        alert(this.tagName)
+    setTemplate: function( template ) {
+        this._template = template
+        this.render()
     }
+
+
 })
